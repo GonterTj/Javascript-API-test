@@ -1,18 +1,10 @@
-async function getanime(){
-    const data = await fetch("https://anime-facts-rest-api.herokuapp.com/api/v1");
-    const json = await data.json();
-    v1_get_facts = json.v1_get_facts;
-    anime_img = json.anime_img; 
- 
-    if (v1_get_facts) {
-        document.getElementById("anime_name").innerText = v1_get_facts;
-    }
+const client = require(`catboys`);
+const catboy = new client();
 
-
- 
-    if (anime_img) {
-        document.getElementById("anime_img").src = anime_img;
-    }
+async function test() {
+    const data = await fetch("https://api.chucknorris.io/jokes/random"); 
+    const json = await data.json(); 
+    console.log(await catboy.img());
 }
- 
-getanime();
+
+test();
