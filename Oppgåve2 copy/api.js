@@ -2,7 +2,8 @@ async function getinfo() {
     let url; 
     const data = await fetch("https://randomuser.me/api/"); 
     const json = await data.json(); 
-    firstname = [[json.results[0].name.first][json.results[0].name.last]];
+    firstname = json.results[0].name.first;
+    lastname = json.results[0].name.last;
     Adresse = json.results[0].location.street.name;
     Adressenr = json.results[0].location.street.number;
     Postnr = json.results[0].location.postcode;
@@ -17,6 +18,9 @@ async function getinfo() {
         document.getElementById("firstname").innerText = firstname;
     }
 
+    if (lastname) {
+        document.getElementById("lastname").innerText = lastname;
+    }
     if (Adresse) {
         document.getElementById("Adresse").innerText = Adresse;
     }
