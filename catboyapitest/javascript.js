@@ -1,4 +1,4 @@
-async function getJoke() {
+async function getCatBoy() {
     let url; 
     const data = await fetch("https://api.catboys.com/img"); 
     const json = await data.json(); 
@@ -10,4 +10,4 @@ async function getJoke() {
  
 }
  
-getJoke();
+getCatBoy();
